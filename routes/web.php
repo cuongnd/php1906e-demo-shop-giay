@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['prefix'=>'admin'],function(){
+    Route::group(['prefix'=>'danh-muc'],function(){
+        Route::get("them",['as'=>'themdanhmuc','uses'=>'CategoryController@getAddCate']);
+
+    });
+
+});
