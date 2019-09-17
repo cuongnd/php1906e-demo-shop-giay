@@ -13,8 +13,21 @@ class CreateCategoryTable extends Migration
      */
     public function up()
     {
+        /**
+         * $table->increments('id');
+        $table->string("name",150);
+        $table->string("slug_name",150)->nullable();
+        $table->integer("order_display")->nullable();
+        $table->integer("parent_id")->nullable();
+        $table->timestamps();
+         *
+         */
         Schema::create('category', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string("name",150);
+            $table->string("slug_name",150)->nullable();
+            $table->integer("order_display")->nullable();
+            $table->integer("parent_id")->nullable();
             $table->timestamps();
         });
     }
