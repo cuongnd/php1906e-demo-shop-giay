@@ -18,6 +18,8 @@ Route::group(['prefix'=>'admin'],function(){
     Route::group(['prefix'=>'danh-muc'],function(){
         Route::get("them",['as'=>'themdanhmuc','uses'=>'CategoryController@getAddCate']);
         Route::post("them",['as'=>'themdanhmuc','uses'=>'CategoryController@postAddCate']);
+        Route::get("danh-sach",['as'=>'listdanhmuc','uses'=>'CategoryController@getListCate']);
+
 
     });
 
